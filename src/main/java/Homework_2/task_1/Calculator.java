@@ -1,7 +1,6 @@
 package Homework_2.task_1;
 
 import java.util.Scanner;
-import java.sql.SQLOutput;
 
 public class Calculator {
     public static final String ANSI_RESET = "\u001B[0m";
@@ -13,12 +12,12 @@ public class Calculator {
     public static final String ANSI_CYAN = "\u001B[36m";
 
     public static void main(String[] args) {
-        int num1 ;
-        int num2 ;
-        int ans ;
+        int num1;
+        int num2;
+        int ans;
         char op;
         Scanner reader = new Scanner(System.in);
-        System.out.println(ANSI_CYAN + "Добро пожаловать в калькулятор!"+ ANSI_RESET);
+        System.out.println(ANSI_CYAN + "Добро пожаловать в калькулятор!" + ANSI_RESET);
         System.out.print(ANSI_PURPLE + "Введите первое число: " + ANSI_RESET);
         while (!reader.hasNextInt()) {
             System.out.println(ANSI_YELLOW + "Неверное значение. Попробуйте еще раз." + ANSI_RESET);
@@ -35,7 +34,7 @@ public class Calculator {
 
         System.out.print(ANSI_PURPLE + "Введите операцию (+, -, *, /): " + ANSI_RESET);
         op = reader.next().charAt(0);
-        switch(op) {
+        switch (op) {
             case '+':
                 ans = num1 + num2;
                 break;
@@ -49,15 +48,18 @@ public class Calculator {
                 if (num2 == 0) {
                     System.out.println(ANSI_RED + "Ошибка! Нарушено правило деления на ноль." + ANSI_RESET);
                     return;
-                } else ans = num1 / num2;
+                } else {
+                    ans = num1 / num2;
+                }
             }
-                break;
-            default:  System.out.println(ANSI_RED + "Ошибка! Неверная операция." + ANSI_RESET);
+            break;
+            default:
+                System.out.println(ANSI_RED + "Ошибка! Неверная операция." + ANSI_RESET);
                 return;
         }
         System.out.print(ANSI_BLUE + "Результат операции: " + ANSI_RESET);
         System.out.println(ANSI_GREEN + num1 + " " + op + " " + num2 + " = " + ans + ANSI_RESET);
     }
-    }
+}
 
 
