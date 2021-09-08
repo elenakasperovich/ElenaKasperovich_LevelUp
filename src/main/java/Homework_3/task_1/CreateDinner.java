@@ -46,15 +46,15 @@ public class CreateDinner {
         };
 
         Sheff sheff = new Sheff();
-        Dish compote = sheff.cook(compoteIngredients, "Компот фруктовый");
-        Dish borsch = sheff.cook(borschIngredients, "Борщ украинский");
+        sheff.cook(compoteIngredients, "Компот фруктовый");
+        sheff.cook(borschIngredients, "Борщ украинский");
         Dish salad = sheff.cook(saladIngredients, "Салат с брынзой");
 
         //Сортировка в салате
         Product tempProduct;
         for (int i = 0; i < saladIngredients.length; i++) {
             for (int j = 1; j < saladIngredients.length - i; j++) {
-                if (saladIngredients[j - 1].calories > saladIngredients[j].calories) {
+                if (saladIngredients[j - 1].getCalories() > saladIngredients[j].getCalories()) {
                     tempProduct = saladIngredients[j - 1];
                     saladIngredients[j - 1] = saladIngredients[j];
                     saladIngredients[j] = tempProduct;
@@ -64,13 +64,13 @@ public class CreateDinner {
         System.out.println("\n" + salad.name + " состоит из:");
         for (Product saladIngredient : saladIngredients) {
             System.out.println(
-                saladIngredient.name + " калорийностью на 100г - " + saladIngredient.calories + " ккал");
+                saladIngredient.getName() + " калорийностью на 100г - " + saladIngredient.getCalories() + " ккал");
         }
         //Ищем ингрединты с ккал от 0-50
         System.out.println("\n" + "Ингредиенты в борще в диапозоне ккал от 0 до 50 ");
         for (Product borschIngredient : borschIngredients) {
-            if (borschIngredient.calories >= 0 && borschIngredient.calories <= 50) {
-                System.out.println(borschIngredient.name);
+            if (borschIngredient.getCalories() >= 0 && borschIngredient.getCalories() <= 50) {
+                System.out.println(borschIngredient.getName());
             }
         }
     }

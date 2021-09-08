@@ -1,8 +1,8 @@
 package Homework_3.task_1;
 
 public class Product {
-    String name;
-    int calories;
+    private String name;
+    private int calories;
 
     public Product(String name, int calories) {
         this.name = getProductName(name);
@@ -13,4 +13,13 @@ public class Product {
     private String getProductName(String name) {
         return "Продукт " + name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
 }
