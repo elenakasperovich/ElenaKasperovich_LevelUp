@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calculator All Tests Suite">
+
+  <test name="Calculator All Tests">
+<!--    <classes>-->
+<!--      <class name="Homework_5.Task1.CalculatorSumTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorSubTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorMultTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorDivTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorPowTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorCosTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorSinTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorTgTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorCtgTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorSqrtTest"/>-->
+<!--      <class name="Homework_5.Task1.CalculatorIsPositiveTest"/>-->
+<!--    </classes>-->
+    <packages>
+      <package name="Homework_5.Task1"/>
+    </packages>
+  </test>
+</suite>
