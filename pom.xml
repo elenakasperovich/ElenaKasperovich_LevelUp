@@ -15,6 +15,9 @@
 
         <checkstyle.version>8.42</checkstyle.version>
 
+
         <maven-checkstyle-plugin.version>5.55.1</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+
     </properties>
 </project>
