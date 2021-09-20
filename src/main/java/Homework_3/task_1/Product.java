@@ -11,7 +11,7 @@ public class Product {
 
     // пример инкапсуляции
     private String getProductName(String name) {
-        return "Продукт " + name;
+        return name;
     }
 
     public String getName() {
