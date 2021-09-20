@@ -21,5 +21,4 @@ public class Product {
     public int getCalories() {
         return calories;
     }
-
 }
