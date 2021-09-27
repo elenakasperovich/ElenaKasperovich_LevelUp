@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="All Tests Suite">
+
+  <test name="All Tests">
+   <classes>
+     <class name="Howework_6.Task1.BaseTest"/>
+     <class name="Howework_6.Task1.Exercise1"/>
+     <class name="Howework_6.Task1.Exercise2"/>
+     <class name="Howework_6.Task1.Exercise3"/>
+   </classes>
+  </test>
+</suite>
