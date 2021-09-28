@@ -7,8 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Exercise1 extends BaseTest {
+    @SuppressWarnings("checkstyle:MethodParamPad")
     @Test
-    public void RunEx1() {
+    public void runEx1() {
 
         //Assert, что вход выполнен успешно
         WebElement newMailButton =
@@ -39,6 +40,18 @@ public class Exercise1 extends BaseTest {
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='elenakasperovich-levelup@mail.ru']")));
         Assert.assertEquals(emailTitle.getText(), "elenakasperovich-levelup@mail.ru");
         emailTitle.click();
+
+        //Verify контент, адресата и тему письма (должно совпадать с пунктом 3)
+        String emailAddress = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                               (By.xpath("//*[contains(@class, 'contacts--1ofjA')][@data-type='to']//span"))).getText();
+        String emailSubject = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                              (By.xpath("//*[@name='Subject']"))).getAttribute("value");
+        String emailBody = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                            (By.xpath("//*[contains(@id, 'BODY')]/div/div"))).getText();
+
+        Assert.assertEquals(emailAddress, EMAIL);
+        Assert.assertEquals(emailSubject, SUBJECT);
+        Assert.assertEquals(emailBody, BODY);
 
         //Отправить письмо
         WebElement sendMailButton =

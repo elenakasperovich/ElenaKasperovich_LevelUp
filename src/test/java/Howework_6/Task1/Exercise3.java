@@ -43,8 +43,23 @@ public class Exercise3 extends BaseTest {
                                     ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Elena Kasperovich <elenakasperovich-levelup@mail.ru>']")))
                                 .getText(), NAME);
 
+        //Verify контент, адресата и тему письма (должно совпадать с пунктом 3)
+        WebElement emailTitle =
+            wait.until(
+                ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Elena Kasperovich <elenakasperovich-levelup@mail.ru>']")));
+        emailTitle.click();
+        String emailAddress = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                               (By.xpath("//*[contains(@class, 'letter-contact')]"))).getText();
+        String emailSubject = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                               (By.xpath("//*[@class='thread__subject']"))).getText();
+        String emailBody = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                            (By.xpath("//*[contains(@id, 'BODY')]/div/div"))).getText();
+
+        Assert.assertEquals(emailAddress, NAME);
+        Assert.assertEquals(emailSubject, SUBJECT2);
+        Assert.assertEquals(emailBody, BODY);
+
         //Удалить письмо
-        driver.findElement(By.xpath("//*[@title='Elena Kasperovich <elenakasperovich-levelup@mail.ru>']")).click();
         WebElement deleteButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Удалить']")));
         deleteButton.click();
 

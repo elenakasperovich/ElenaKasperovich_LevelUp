@@ -44,8 +44,20 @@ public class Exercise2 extends BaseTest {
         WebElement testFolder = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Тест')]")));
         testFolder.click();
 
+        //Verify контент, адресата и тему письма (должно совпадать с пунктом 3)
+        WebElement emailTitle =
+            wait.until(
+                ExpectedConditions.elementToBeClickable(By.xpath("//*[@title='Elena Kasperovich <elenakasperovich-levelup@mail.ru>']")));
+        emailTitle.click();
+        String emailAddress = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                               (By.xpath("//*[contains(@class, 'letter-contact')]"))).getText();
+        String emailSubject = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                               (By.xpath("//*[@class='thread__subject']"))).getText();
+        String emailBody = wait.until(ExpectedConditions.visibilityOfElementLocated
+                                                            (By.xpath("//*[contains(@id, 'BODY')]/div/div"))).getText();
 
-
-
+        Assert.assertEquals(emailAddress, NAME);
+        Assert.assertEquals(emailSubject, SUBJECT);
+        Assert.assertEquals(emailBody, BODY);
     }
 }
