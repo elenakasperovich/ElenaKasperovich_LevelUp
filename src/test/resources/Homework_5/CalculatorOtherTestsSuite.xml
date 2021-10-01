@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calculator Other Tests">
+
+  <test name="Calculator Other Tests">
+    <classes>
+      <class name="Homework_5.CalculatorPowTest"/>
+      <class name="Homework_5.CalculatorSqrtTest"/>
+      <class name="Homework_5.CalculatorIsPositiveTest"/>
+      <class name="Homework_5.CalculatorIsNegativeTest"/>
+    </classes>
+  </test>
+</suite>
