@@ -3,7 +3,7 @@
 
   <test name="Ex1">
     <classes>
-      <class name="Howework_6.Task1.Exercise1"/>
+      <class name="Howework_6.Exercise1"/>
     </classes>
   </test>
 </suite>

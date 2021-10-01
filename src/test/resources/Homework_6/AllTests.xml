@@ -3,10 +3,10 @@
 
   <test name="All Tests">
    <classes>
-     <class name="Howework_6.Task1.BaseTest"/>
-     <class name="Howework_6.Task1.Exercise1"/>
-     <class name="Howework_6.Task1.Exercise2"/>
-     <class name="Howework_6.Task1.Exercise3"/>
+     <class name="Howework_6.BaseTest"/>
+     <class name="Howework_6.Exercise1"/>
+     <class name="Howework_6.Exercise2"/>
+     <class name="Howework_6.Exercise3"/>
    </classes>
   </test>
 </suite>
